@@ -1,9 +1,12 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.time.LocalTime;
 public class NewRegistration {
 
-    static ArrayList<NewRegistration>DataofRegisterdCars=new ArrayList<>(100);
+    static ArrayList<NewRegistration>DataofRegisterdCars=new ArrayList<>();
     Scanner sc=new Scanner(System.in);
     String OwnerName,RegNo;
     LocalDateTime time_of_registration;
@@ -13,8 +16,26 @@ public class NewRegistration {
         this.RegNo=RegNo;
         this.time_of_registration=time_of_registration;
         DataofRegisterdCars.add(this);
+    }
+
+    public static void writeToFile()
+    {
+        try {
+            FileWriter d=new FileWriter("registered cars.txt",true);
 
 
+            for (NewRegistration a: DataofRegisterdCars)
+            {
+                d.write(a.OwnerName + "\n" + a.RegNo + "\n" + a.time_of_registration + "\n");
+            }
+
+            //System.out.println("Successfully written");
+
+
+            d.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -25,3 +46,18 @@ public class NewRegistration {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+//for (String str : arrayList) {
+//    fw.write(str);
+//}
