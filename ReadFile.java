@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 public class ReadFile {
 
-    static ArrayList<NewRegistration> list = new ArrayList<>(100);
+    static ArrayList<NewRegistration> list = new ArrayList<>();
     static NewRegistration line;
 
     public static void readFromFile()
     {
+        list.clear();
         File fr = new File("registered cars.txt");
         try {
             Scanner sc = new Scanner(fr);

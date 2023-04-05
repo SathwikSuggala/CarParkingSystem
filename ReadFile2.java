@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class ReadFile2 {
 
     static ArrayList<NewRegistration> list1 = new ArrayList<>();
+    static ArrayList list12 = new ArrayList();
     static NewRegistration line1;
 
     public static void readFromFile()
@@ -18,7 +19,9 @@ public class ReadFile2 {
                 String name = sc.nextLine();
                 String regNo = sc.nextLine();
                 LocalDateTime o = LocalDateTime.parse(sc.nextLine());
-
+                list12.add(name);
+                list12.add(regNo);
+                list12.add(o);
                 line1 = new NewRegistration(name, regNo, o);
                 list1.add(line1);
             }
