@@ -7,6 +7,7 @@ import java.time.LocalTime;
 public class NewRegistration {
 
     static ArrayList<NewRegistration>DataofRegisterdCars=new ArrayList<>();
+
     Scanner sc=new Scanner(System.in);
     String OwnerName,RegNo;
     LocalDateTime time_of_registration;
@@ -15,11 +16,17 @@ public class NewRegistration {
         this.OwnerName=OwnerName;
         this.RegNo=RegNo;
         this.time_of_registration=time_of_registration;
+
+    }
+    public void add()
+    {
+
         DataofRegisterdCars.add(this);
     }
 
     public static void writeToFile()
     {
+
         try {
             FileWriter d=new FileWriter("registered cars.txt",true);
 
@@ -33,6 +40,7 @@ public class NewRegistration {
 
 
             d.close();
+            NewRegistration.DataofRegisterdCars.clear();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
