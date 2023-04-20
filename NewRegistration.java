@@ -54,18 +54,3 @@ public class NewRegistration {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-//for (String str : arrayList) {
-//    fw.write(str);
-//}

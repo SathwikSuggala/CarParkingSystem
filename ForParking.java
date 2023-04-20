@@ -48,18 +48,3 @@ public class ForParking {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-//for (String str : arrayList) {
-//    fw.write(str);
-//}

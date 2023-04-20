@@ -8,6 +8,10 @@ public class MainClass {
         Scanner sc=new Scanner(System.in);
         String mainloop="0",mainloopcheck;
 
+        System.out.println("__________________________________________________________________________________________________________________________________________________________________________________");
+        System.out.println("                                                                     WELCOME TO CAR PARKING SYSTEM");
+        System.out.println("                                                                             Max Limit: 250");
+        System.out.println("__________________________________________________________________________________________________________________________________________________________________________________");
         while(!mainloop.equals("1"))
         {
             System.out.println("Enter 2 to make new registration \nEnter 3 to check how many cars have been registered till yet \nEnter 4 to access parking space \nEnter 5 to print all registerd cars \nEnter 6 to know which cars have been parked till now");
@@ -17,7 +21,7 @@ public class MainClass {
             //checking how many vaccant registrations are available
             if(ReadFile3.list3.size()>=250)
             {
-                System.out.println("car registrations have been closed becaue parking slots have been full occupied"+ReadFile3.list3.size());
+                System.out.println("car registrations have been closed because parking slots have been fully occupied"+ReadFile3.list3.size());
                 break;
             }
             else
@@ -76,7 +80,7 @@ public class MainClass {
                     int controleregno=0;
                     while(controleregno!=1)
                     {
-                        System.out.println("enter your cars Registration number: ");
+                        System.out.println("Enter your cars Registration number: ");
                         RegNo = sc.nextLine();
                         if (RegNo.equals("exit"))
                         {
@@ -106,10 +110,10 @@ public class MainClass {
                                 continue;
                             }
 
-                        else
-                        {
-                            controleregno=1;
-                        }
+                            else
+                            {
+                                controleregno=1;
+                            }
                     }
                         else
                         {
@@ -141,7 +145,7 @@ public class MainClass {
                 }
 
                 NewRegistration.writeToFile();
-                //NewRegistration.DataofRegisterdCars.clear();
+
 
 
             }
@@ -151,7 +155,7 @@ public class MainClass {
             if (ControleInput.equals("3"))
             {
                 ReadFile.readFromFile();
-                System.out.println("no of cars registered till now : " + ReadFile.list.size());
+                System.out.println("Number of cars registered till now : " + ReadFile.list.size());
             }
 
 //Control input 4 to access cara parking space
@@ -165,7 +169,7 @@ public class MainClass {
                 int controleregno=0;
                 int rc1,rc2,rc3,rc4,rc5,rc6,rc7,rc8,rc9,rc10;
                 while(controleregno!=1) {
-                    System.out.println("Enter Your car Regno to access parking space");
+                    System.out.println("Enter Your car Registration number to access parking space");
                     CheckRegNo = sc.nextLine();
                     if (CheckRegNo.equals("exit"))
                     {
@@ -190,7 +194,7 @@ public class MainClass {
                         if (rc1 < 64 || rc2 < 64 || (rc3 < 48 && rc3 > 58) || (rc4 < 48 && rc4 > 58) || rc5 < 64 || rc6 < 64 || (rc7 < 48 && rc7 > 58) || (rc8 < 48 && rc8 > 58) || (rc9 < 48 && rc9 > 58) || (rc10 < 48 && rc10 > 58))
                         {
 
-                            System.out.println("\nRegistration number that you have entered is not a valid one please try again or enter exit in the place of registration number\n");
+                            System.out.println("\nRegistration number that you have entered is not a valid one, please try again or enter exit in the place of registration number\n");
                             System.out.println("Example:AB12CD3456");
                             continue;
                         }
@@ -217,8 +221,8 @@ public class MainClass {
 
                 if(ReadFile2.list12.contains(CheckRegNo))
                 {
-                    System.out.println("your car is already parked in the parking area at parking slot "+((ReadFile2.list12.indexOf(CheckRegNo)/3)+1));
-                    System.out.println("Returning back to main menue\n\n");
+                    System.out.println("Your car is already parked in the parking area at parking slot "+((ReadFile2.list12.indexOf(CheckRegNo)/3)+1));
+                    System.out.println("Returning back to main menu\n\n");
                     continue;
                 }
 
@@ -229,11 +233,11 @@ public class MainClass {
 
                     OwnerName = RegisterdOrNot.carregisterd.get(indexincr).toString();
                     System.out.println("you are allowed to park\n");
-                    System.out.println("\nDo you want to park your car?\nif yes press any value \nif not enter 1");
+                    System.out.println("\nDo you want to park your car?\nif yes press any value\nif not enter 1");
                     String parkcheck=sc.next();
                     if(parkcheck.equals("1"))
                     {
-                        System.out.println("Returning back to main menue\n\n");
+                        System.out.println("Returning back to main menu\n\n");
                         continue;
                     }
                     else
@@ -246,8 +250,8 @@ public class MainClass {
                 }
                 else
                 {
-                    System.out.println("you are not registered in our system, please register first");
-                    System.out.println("Returning back to main menue\n\n");
+                    System.out.println("You are not registered in our system, please register first");
+                    System.out.println("Returning back to main menu\n\n");
                     continue;
                 }
                 ForParking.writeToFile2();
@@ -272,11 +276,11 @@ public class MainClass {
             else if(!ControleInput.equals("2") && !ControleInput.equals("3") && !ControleInput.equals("4") && !ControleInput.equals("5") && !ControleInput.equals("6"))
             {
                 System.out.println("\nPlease Enter a valid input");
-                System.out.println("\nReturning back to main menue \n\n");
+                System.out.println("\nReturning back to main menu \n\n");
                 continue;
             }
 
-            System.out.println("\n\nenter any value to go to main menu\nenter 1 to exit car parking system\n");
+            System.out.println("\n\nEnter any value to go to main menu\nEnter 1 to exit car parking system\n");
 //            if(!ControleInput.equals("2")) {
 //                sc.next();
 //            }
@@ -285,6 +289,9 @@ public class MainClass {
             if(mainloopcheck.equals("1"))
             {
                 mainloop="1";
+                System.out.println("__________________________________________________________________________________________________________________________________________________________________________________");
+                System.out.println("                                                                               THANK YOU");
+                System.out.println("__________________________________________________________________________________________________________________________________________________________________________________");
             }
 
         }
